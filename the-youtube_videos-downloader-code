@@ -24,3 +24,10 @@ ydl_opts = {
     "concurrent_fragment_downloads": 5,
     "socket_timeout": 60,
     "retries": 10,
+    "fragment_retries": 10,
+}
+
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    ydl.download([url])
+
+print("\nthe download is done go and check your downloads")
