@@ -1,0 +1,26 @@
+
+import os
+import yt_dlp
+
+while True:
+#this is the start list of all the youtube links
+        valid_starts = ("https://youtube.com/", "https://youtu.be/")
+
+        url = input("enter your URL: ").strip()
+
+        if not  url.startswith(valid_starts):
+                print("this is not a youtube url")
+
+
+
+print("THE YOUTUBE URL:..", url)
+
+download_path = "/sdcard/Download/%(title)s.%(ext)s"
+
+ydl_opts = {
+    "format": "bestvideo[height<=720]+bestaudio/best",
+    "merge_output_format": "mp4",
+    "outtmpl": download_path,
+    "concurrent_fragment_downloads": 5,
+    "socket_timeout": 60,
+    "retries": 10,
